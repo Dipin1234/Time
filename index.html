@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DK का Killer Time Table 🔥💀</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(135deg, #0a0a1a, #050511);
+            color: #ffebcc;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        /* Ember and Skull Particle Animation */
+        #particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .particle {
+            position: absolute;
+            background: radial-gradient(circle, #ff4444 20%, #ff8c00 70%, transparent);
+            border-radius: 50%;
+            box-shadow: 0 0 15px #ff4444, 0 0 30px #ff8c00;
+            animation: fall linear infinite;
+        }
+        .skull {
+            position: absolute;
+            font-size: 30px;
+            color: rgba(255, 68, 68, 0.3);
+            animation: skullFade 10s linear infinite;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh) scale(1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(100vh) scale(0.3);
+                opacity: 0;
+            }
+        }
+        @keyframes skullFade {
+            0% { opacity: 0; transform: translateY(-20px) rotate(0deg); }
+            50% { opacity: 0.3; }
+            100% { opacity: 0; transform: translateY(20px) rotate(360deg); }
+        }
+        .container {
+            max-width: 950px;
+            background: rgba(0, 0, 0, 0.92);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 50px rgba(255, 68, 68, 0.8), 0 0 100px rgba(255, 140, 0, 0.4);
+            animation: fadeIn 1.2s ease-in;
+            z-index: 1;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1 {
+            text-align: center;
+            color: #ff4444;
+            font-size: 3em;
+            text-shadow: 0 0 20px #ff4444, 0 0 40px #ff8c00, 0 0 60px #ff4444;
+            margin-bottom: 30px;
+            animation: fireGlow 1.2s infinite alternate;
+        }
+        @keyframes fireGlow {
+            from { text-shadow: 0 0 20px #ff4444, 0 0 40px #ff8c00; }
+            to { text-shadow: 0 0 30px #ff4444, 0 0 60px #ff8c00, 0 0 80px #ff4444; }
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        th, td {
+            padding: 18px;
+            text-align: left;
+            border-bottom: 2px solid #ff4444;
+            transition: all 0.3s ease;
+            font-size: 1.1em;
+        }
+        th {
+            background: linear-gradient(90deg, #ff4444, #ff8c00);
+            color: #0a0a1a;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-shadow: 0 0 5px #000;
+        }
+        td {
+            background: #1a1a2e;
+        }
+        tr:hover td {
+            background: #2a2a3a;
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 68, 68, 0.7);
+            color: #fff;
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+        }
+        .checkbox {
+            appearance: none;
+            width: 28px;
+            height: 28px;
+            border: 3px solid #ff4444;
+            border-radius: 50%;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .checkbox:checked {
+            background: #ff4444;
+            border-color: #ff8c00;
+            box-shadow: 0 0 20px #ff4444, 0 0 40px #ff8c00;
+            animation: flameBurst 0.5s ease;
+        }
+        @keyframes flameBurst {
+            0% { transform: scale(1); box-shadow: 0 0 0 #ff4444; }
+            50% { transform: scale(1.4); box-shadow: 0 0 30px #ff4444, 0 0 50px #ff8c00; }
+            100% { transform: scale(1); box-shadow: 0 0 20px #ff4444, 0 0 40px #ff8c00; }
+        }
+        .checkbox:checked::after {
+            content: '💀';
+            color: #0a0a1a;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .completed td:not(:last-child) {
+            text-decoration: line-through;
+            color: #666;
+            text-shadow: none;
+            animation: ashFade 0.6s ease;
+        }
+        @keyframes ashFade {
+            from { color: #ffebcc; }
+            to { color: #666; }
+        }
+        .tips {
+            background: #1a1a2e;
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid #ff8c00;
+            margin-top: 20px;
+            animation: slideIn 1.2s ease-in;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .tips h2 {
+            color: #ff4444;
+            text-shadow: 0 0 15px #ff4444;
+            margin-bottom: 15px;
+        }
+        .tips li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.1em;
+        }
+        .tips li::before {
+            content: '💀';
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+            th, td {
+                font-size: 0.95em;
+                padding: 12px;
+            }
+            .checkbox {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="particles"></canvas>
+    <div class="container">
+        <h1>🧠🔥 DK का Killer Time Table (4 AM – 10 PM) 💀</h1>
+        <table id="timetable">
+            <thead>
+                <tr>
+                    <th>⏰ Time</th>
+                    <th>📚 Activity / Subject</th>
+                    <th>💡 Focus</th>
+                    <th>✅ Done</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>4:00 – 4:30 AM</td>
+                    <td>उठो + Freshen up + हल्का स्ट्रेच</td>
+                    <td>माइंड ऑन करो</td>
+                    <td><div class="checkbox-container"><input type="checkbox" class="checkbox" data-id="1"></div></td>
+                </tr>
+                <tr>
+                    <td>4:30 – 5:30 AM</td>
+                    <td>Python (1 Hour)</td>
+                    <td>कोडिंग से दिमाग तेज़ करो</td>
+                    <td><div class="checkbox-container"><input type="checkbox" class="checkbox" data-id="2"></div></td>
+                </tr>
+                <tr>
+                    <td>5:30 – 6:30 AM</td>
+                    <td>Govt Job Maths</td>
+                    <td>DI, Arithmetic, Speed Maths</td>
+                    <td><div class="checkbox-container"><input type="checkbox" class="checkbox" data-id="3"></div></td>
+                </tr>
+                <tr>
+                    <td>6:30 – 7:00 AM</td>
+                    <td>Break + हल्का Walk</td>
+                    <td>फ्रेश माइंड के लिए</td>
+                    <td><div class="checkbox-container"><input type="checkbox" class="checkbox" data-id="4"></div></td>
+                </tr>
+                <tr>
+                    <td>7:00 – 8:00 AM</td>
+                    <td>Reasoning</td>
+                    <td>Puzzle + Logical Game Mode</td>
+                    <td><div class="checkbox-container"><input type="checkbox" class="checkbox" data-id="5"></div></td>
+                </tr>
+                <tr>
+                    <td>8:00 – 9:00 AM</td>
+                    <td>Physics (PCM)</td>
+                    <td>Concepts + Numericals</td>
+                    <td><div class="checkbox-container"><input type="checkbox" class="checkbox" data-id="6"></div></td>
+                </tr>
+                <tr>
+                    <td>9:00 – 9:30 AM</td>
+                    <td>Breakfast</td>
+                    <td>हल्का खाओ, तेज़ दौड़ो</td>
+                    <td><div class="checkbox-container"><input type="checkbox" class="checkbox" data-id="7"></div></td>
+                </tr>
+                <tr>
+                    <td>9:30 – 10:00 AM</td>
+                    <td>Chemistry (PCM)</td>
+                    <td>Reactions / Theory with focus</td>
+                    <td><div class="checkbox-container"><input type="checkbox" class="checkbox" data-id="8"></div></td>
+                </tr>
+                <tr>
+                    <td>10:00 – 10:30 AM</td>
+                    <td>Maths (PCM)</td>
+                    <td>Questions + Formulas</td>
+                    <td><div class="checkbox-container"><input type="checkbox" class="checkbox" data-id="9"></div></td>
+                </tr>
+                <tr>
+                    <td>10:30 – 12:00 PM</td>
+                    <td>BCA Core Subjects</td>
+                    <td>OS / DBMS / CN deep-dive</td>
+                    <td><div class="checkbox-container"><input type="checkbox" class="checkbox" data-id="10"></div></td>
+                </tr>
+                <tr>
+                    <td>12:00 – 1:00 PM</td>
+                    <td>Daily English</td>
+                    <td>Grammar, Vocab + Reading</td>
+                    <td><div class="checkbox-container"><input type="checkbox" class="checkbox" data-id="11"></div></td>
+                </tr>
+                <tr>
+                    <td>1:00 – 2:00 PM</td>
+                    <td>Lunch + Power Nap (30m)</td>
+                    <td>दिमाग को reset करो</td>
+                    <td><div class="checkbox-container"><input type="checkbox" class="checkbox" data-id="12"></div></td>
+                </tr>
+                <tr>
+                    <td>2:00 – 3:00 PM</td>
+                    <td>BCA Revision / PYQs</td>
+                    <td>Smart revision, memory tricks</td>
+                    <td><div class="checkbox-container"><input type="checkbox" class="checkbox" data-id="13"></div></td>
+                </tr>
+                <tr>
+                    <td>3:00 – 4:00 PM</td>
+                    <td>Mock Test / Practice Session</td>
+                    <td>Accuracy & Timing फाड़ो</td>
+                    <td><div class="checkbox-container"><input type="checkbox" class="checkbox" data-id="14"></div></td>
+                </tr>
+                <tr>
+                    <td>4:00 – 4:30 PM</td>
+                    <td>Tea Break + Music / Chill</td>
+                    <td>माइंड cool करो</td>
+                    <td><div class="checkbox-container"><input type="checkbox" class="checkbox" data-id="15"></div></td>
+                </tr>
+                <tr>
+                    <td>4:30 – 5:30 PM</td>
+                    <td>Alternate Subject Revision</td>
+                    <td>Focus on weak zones (PCM / Govt)</td>
+                    <td><div class="checkbox-container"><input type="checkbox" class="checkbox" data-id="16"></div></td>
+                </tr>
+                <tr>
+                    <td>5:30 – 6:30 PM</td>
+                    <td>YouTube Conceptual / Revision Videos</td>
+                    <td>Visual + audio से boost</td>
+                    <td><div class="checkbox-container"><input type="checkbox" class="checkbox" data-id="17"></div></td>
+                </tr>
+                <tr>
+                    <td>6:30 – 7:30 PM</td>
+                    <td>Dinner + Relax</td>
+                    <td>धीमे खाओ, जल्दी सो पाओ</td>
+                    <td><div class="checkbox-container"><input type="checkbox" class="checkbox" data-id="18"></div></td>
+                </tr>
+                <tr>
+                    <td>7:30 – 8:30 PM</td>
+                    <td>Mistake Review / Doubt Solve</td>
+                    <td>Analysis Time</td>
+                    <td><div class="checkbox-container"><input type="checkbox" class="checkbox" data-id="19"></div></td>
+                </tr>
+                <tr>
+                    <td>8:30 – 9:30 PM</td>
+                    <td>Light Study (Eng / Notes / Flashcards)</td>
+                    <td>Easy topics दोहराओ</td>
+                    <td><div class="checkbox-container"><input type="checkbox" class="checkbox" data-id="20"></div></td>
+                </tr>
+                <tr>
+                    <td>9:30 – 10:00 PM</td>
+                    <td>Wind Down + Gratitude / Planning</td>
+                    <td>अगला दिन सेट करो</td>
+                    <td><div class="checkbox-container"><input type="checkbox" class="checkbox" data-id="21"></div></td>
+                </tr>
+                <tr>
+                    <td>10:00 PM</td>
+                    <td>SLEEP</td>
+                    <td>Solid नींद = Solid Performance</td>
+                    <td><div class="checkbox-container"><input type="checkbox" class="checkbox" data-id="22"></div></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tips">
+            <h2>🔥 Bonus Pro-Tips for DK Boss 💀:</h2>
+            <ul>
+                <li><strong>30-30-30 Rule:</strong> हर 30 मिनट के बाद 30 सेकंड के लिए आँखें बंद + 30 सेकंड स्टैंड स्टेच।</li>
+                <li>रोज़ एक टॉपिक ऐसा पकड़ो जो आपको डराता है – वही दुश्मन आपका असली हथियार बनेगा।</li>
+                <li>हर रात 5 मिनट में लिखो – “आज मैंने क्या जीता?” ✅</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Particle and Skull Animation
+        function createParticles() {
+            const canvas = document.getElementById('particles');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            const ctx = canvas.getContext('2d');
+            const particlesArray = [];
+
+            class Particle {
+                constructor() {
+                    this.isSkull = Math.random() < 0.1; // 10% chance to be a skull
+                    this.x = Math.random() * canvas.width;
+                    this.y = -10;
+                    this.size = this.isSkull ? Math.random() * 20 + 20 : Math.random() * 5 + 3;
+                    this.speed = Math.random() * 3 + 1;
+                    this.opacity = Math.random() * 0.5 + 0.3;
+                    this.color = this.isSkull ? 'rgba(255, 68, 68, 0.3)' : `rgba(${Math.random() * 50 + 200}, ${Math.random() * 100 + 50}, 0, ${this.opacity})`;
+                }
+                update() {
+                    this.y += this.speed;
+                    if (this.y > canvas.height) {
+                        this.y = -10;
+                        this.x = Math.random() * canvas.width;
+                    }
+                }
+                draw() {
+                    if (this.isSkull) {
+                        ctx.font = `${this.size}px Arial`;
+                        ctx.fillStyle = this.color;
+                        ctx.fillText('💀', this.x, this.y);
+                    } else {
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                        ctx.fillStyle = this.color;
+                        ctx.shadowColor = '#ff4444';
+                        ctx.shadowBlur = 15;
+                        ctx.fill();
+                    }
+                }
+            }
+
+            function init() {
+                for (let i = 0; i < 60; i++) {
+                    particlesArray.push(new Particle());
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particlesArray.forEach(particle => {
+                    particle.update();
+                    particle.draw();
+                });
+                requestAnimationFrame(animate);
+            }
+
+            init();
+            animate();
+        }
+
+        // Checkbox Functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            const checkboxes = document.querySelectorAll('.checkbox');
+
+            // Load checkbox states from localStorage
+            checkboxes.forEach(checkbox => {
+                const id = checkbox.getAttribute('data-id');
+                const savedState = localStorage.getItem(`task-${id}`);
+                if (savedState === 'checked') {
+                    checkbox.checked = true;
+                    checkbox.parentElement.parentElement.parentElement.classList.add('completed');
+                }
+
+                // Add event listener for checkbox changes
+                checkbox.addEventListener('change', () => {
+                    const row = checkbox.parentElement.parentElement.parentElement;
+                    if (checkbox.checked) {
+                        row.classList.add('completed');
+                        localStorage.setItem(`task-${id}`, 'checked');
+                    } else {
+                        row.classList.remove('completed');
+                        localStorage.setItem(`task-${id}`, 'unchecked');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
